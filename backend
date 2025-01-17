@@ -1,0 +1,15 @@
+# Enter the number of participants 
+
+numberOfParticipants = int(input("Enter the number of people: "))
+print(type(numberOfParticipants)) #type is int
+
+# Adding the names of participants
+# Ovjde ce ici for petlja jer mi znamo koji je tacan broj ponavljanja, sam user to kaze na pocetku programa 
+
+for 
+
+
+while True:
+    name = input("Name of participant: " )
+    if name == "":
+        break
