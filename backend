@@ -25,3 +25,31 @@ for i in range(numberOfParticipants):
         
 print("This is the list of participants: " + str(names))
 print("This is the list of their expenses: " + str(expenses))
+
+# Importing modules and creating variables
+
+names = []
+expenses = []
+
+# Enter the number of participants 
+
+numberOfParticipants = int(input("Enter the number of people: "))
+# print(type(numberOfParticipants)) #type is int
+# print(numberOfParticipants)
+
+
+# Adding the names of participants and their expenses
+
+for i in range(numberOfParticipants): 
+        name = input("Enter a name: " )
+        if name == "":
+            break
+        while True:
+            expense = input("Enter a cost: ")
+            if expense == "":
+                break
+        names = names + [name]
+        expenses = expenses + [expense]
+        
+print("This is the list of participants: " + str(names))
+print("This is the list of their expenses: " + str(expenses))
