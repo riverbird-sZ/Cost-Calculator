@@ -1,15 +1,27 @@
+# Importing modules and creating variables
+
+names = []
+expenses = []
+
 # Enter the number of participants 
 
 numberOfParticipants = int(input("Enter the number of people: "))
 print(type(numberOfParticipants)) #type is int
-
-# Adding the names of participants
-# Ovjde ce ici for petlja jer mi znamo koji je tacan broj ponavljanja, sam user to kaze na pocetku programa 
-
-for 
+print(numberOfParticipants)
 
 
-while True:
-    name = input("Name of participant: " )
-    if name == "":
-        break
+# Adding the names of participants and their expenses
+
+for i in range(numberOfParticipants): 
+    if i < numberOfParticipants: 
+        name = input("Enter a name: " )
+        while True: 
+            expense = input("Enter a cost: ")
+            purpose = input("Enter a purpose of a cost: ")
+            if expense == "": 
+                break
+        names = names + [name]
+        expenses = expenses + [expense]
+        
+print("This is the list of participants: " + str(names))
+print("This is the list of their expenses: " + str(expenses))
