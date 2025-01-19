@@ -53,3 +53,39 @@ for i in range(numberOfParticipants):
         
 print("This is the list of participants: " + str(names))
 print("This is the list of their expenses: " + str(expenses))
+
+
+# novi dio koda - 19. januar
+
+# Importing modules and creating variables
+
+names = []
+expenses = []
+
+# Enter the number of participants 
+
+numberOfParticipants = int(input("Enter the number of people: "))
+# print(type(numberOfParticipants)) #type is int
+# print(numberOfParticipants)
+
+
+# Adding the names of participants and their expenses
+
+for name in range(numberOfParticipants): 
+        name = input("Enter a name: " )
+        expense = input("Enter a cost: ")
+        names = names + [name]
+        expenses = expenses + [expense]
+        # i think there is a way to make this better (create a dictionary from the start without creating lists)
+        
+print("This is the list of participants: " + str(names))
+print("This is the list of their expenses: " + str(expenses))
+
+# Creating a dictionary from two lists 
+
+myFirstDictionary = dict(zip(names, expenses))
+print(myFirstDictionary)
+
+# Calculate sum for each participant 
+
+sumCost =
