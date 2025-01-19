@@ -1,0 +1,66 @@
+Naravno! Hajde da detaljno razložimo treći deo koda:
+
+```python
+sabrani_troskovi = {osoba: sum(troskovi_osobe) for osoba, troskovi_osobe in troskovi.items()}
+```
+
+Ovaj deo koda je **dictionary comprehension** (kroz koji se pravi novi rečnik na temelju postojećeg). Razložićemo ga na manje delove:
+
+### 1. **`troskovi.items()`**
+   - `troskovi` je rečnik sa osobama i njihovim troškovima. Metoda `items()` vraća sve stavke (ključ, vrednost) iz rečnika kao parove.
+   - Na primer:
+     ```python
+     troskovi = {
+         'Ana': [100, 200, 50],
+         'Marko': [150, 300],
+         'Jelena': [200, 50, 30],
+     }
+     ```
+     Ako pozoveš `troskovi.items()`, dobićeš:
+     ```python
+     [('Ana', [100, 200, 50]), ('Marko', [150, 300]), ('Jelena', [200, 50, 30])]
+     ```
+     Svaki element ove liste je tuple (par), gde je prvi element ime osobe, a drugi element lista sa troškovima.
+
+### 2. **`for osoba, troskovi_osobe in troskovi.items()`**
+   - Ovo je **for petlja** koja prolazi kroz sve stavke (parove) u rečniku. Na svakom koraku petlje:
+     - **`osoba`** će biti ime osobe (npr. `'Ana'`).
+     - **`troskovi_osobe`** će biti lista sa troškovima te osobe (npr. `[100, 200, 50]`).
+   - Dakle, ova petlja iterira kroz sve osobe i njihove liste troškova.
+
+### 3. **`sum(troskovi_osobe)`**
+   - **`sum()`** je funkcija koja računa zbir svih elemenata u listi.
+   - Za svaku osobu, **`troskovi_osobe`** je lista sa njenim troškovima. Funkcija `sum(troskovi_osobe)` sabira sve vrednosti unutar te liste.
+     - Na primer, ako je `troskovi_osobe = [100, 200, 50]`, onda će `sum(troskovi_osobe)` biti:
+       ```python
+       100 + 200 + 50 = 350
+       ```
+
+### 4. **`{osoba: sum(troskovi_osobe)}`**
+   - Ovo je deo koji zapravo formira novi **rečnik**. 
+   - Za svaku iteraciju, novi rečnik dobija ključ `osoba` (ime osobe) i vrednost koja je zbir troškova za tu osobu, dobijen pomoću `sum(troskovi_osobe)`.
+
+### 5. **Celi izraz: `{osoba: sum(troskovi_osobe) for osoba, troskovi_osobe in troskovi.items()}`**
+   - Ovaj izraz stvara novi rečnik sa ukupnim troškovima za svaku osobu.
+   - Za svaku osobu (ključ) i listu troškova (vrednost) u originalnom rečniku `troskovi`, koristi se `sum()` da se saberu svi troškovi, i onda se pravi novi rečnik sa tim ukupnim troškovima.
+
+### Konačan rezultat:
+Ako imamo originalni rečnik:
+```python
+troskovi = {
+    'Ana': [100, 200, 50],
+    'Marko': [150, 300],
+    'Jelena': [200, 50, 30],
+}
+```
+
+Rezultat će biti:
+```python
+{
+    'Ana': 350,
+    'Marko': 450,
+    'Jelena': 280
+}
+```
+
+Dakle, ovaj kod koristi **dictionary comprehension** da generiše novi rečnik u kojem su vrednosti (troškovi) sabrane za svaku osobu.
