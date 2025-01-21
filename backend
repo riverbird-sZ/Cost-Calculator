@@ -58,7 +58,7 @@ for x, y in balances.items():
         print(f"Someone owes to {x}")
     else:
         print(f"No one owes to {x}")  
-
+# check the logic of this component
 
 
 
