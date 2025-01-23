@@ -52,13 +52,14 @@ print("Balance is: ", balances)
 # Division of cost so that all participants have same expense
 
 for x, y in balances.items():
-    if y > averageExpense:
-        print(f"{x} owes to someone")
-    elif y < averageExpense:
+    if y < 0:
         print(f"Someone owes to {x}")
+    elif y > 0:
+        print(f"{x} owes to someone")
     else:
-        print(f"No one owes to {x}")  
+        print(f"No one owes to {x}, niether this person owes to someone")  
 # check the logic of this component
+# utvrditi ko je someone
 
 
 
